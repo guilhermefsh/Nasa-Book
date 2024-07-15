@@ -20,6 +20,7 @@ export const TitlePageContainer = styled.div`
 
 export const SeeMore = styled.div`
     p{
+        margin-top:-20px;
         text-align:center;
         text-transform:uppercase;
     }

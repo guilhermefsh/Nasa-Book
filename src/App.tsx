@@ -3,7 +3,8 @@ import { ThemeProvider } from "styled-components"
 import { defaultTheme } from "./styles/theme/default"
 import { GlobalStyles } from "./styles/globalstyles"
 import { Router } from "./routes/router"
-
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
+        <ToastContainer />
         <Router />
       </ThemeProvider>
     </BrowserRouter >

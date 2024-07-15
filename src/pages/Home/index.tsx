@@ -4,7 +4,6 @@ import { MarsRover } from "./components/MarsRover";
 import { HomeContainer, SeeMore, TitlePageContainer } from "./styles"
 import { GiGalaxy } from "react-icons/gi";
 
-
 export const Home = () => {
     return (
         <>
@@ -13,9 +12,11 @@ export const Home = () => {
                     <h1>Explore a galáxia com imagens oficias da nasa!</h1>
                     <GiGalaxy size={40} />
                 </TitlePageContainer>
-                <SeeMore>
-                    <p>Veja mais</p>
-                </SeeMore>
+                <div>
+                    <SeeMore>
+                        <p>DECOLE PARA MAIS INFORMAÇÕES</p>
+                    </SeeMore>
+                </div>
             </HomeContainer>
             <APOD />
             <Gallery />

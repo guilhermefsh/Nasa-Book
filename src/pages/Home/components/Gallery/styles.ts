@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const GalleryContainer = styled.section`
-    height: 100vh;
+    height: auto;
+    margin-top:8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -77,11 +78,12 @@ export const GalleryInfo = styled.div`
         color: ${props => props.theme['light-purple']};
     }
 
-    button {
+    a {
         font-size: 1.5rem;
         color: ${props => props.theme.white};
         background-color: transparent;
-        border-color: ${props => props.theme['light-purple']};
+        border:2px solid ${props => props.theme['light-purple']};
+        text-decoration:none;
         padding: 1rem;
         width: 100%;
         border-radius: 20px;

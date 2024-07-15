@@ -1,4 +1,4 @@
-
+import { NavLink } from 'react-router-dom'
 import { FooterContainer, Icons, LinksPages } from './styles'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
@@ -7,12 +7,11 @@ export const Footer = () => {
         <FooterContainer>
             <span>Nasa<strong>Book</strong></span>
 
-
             <nav>
                 <LinksPages>
-                    <li>Galeria</li>
-                    <li>Projeto mars</li>
-                    <li>SOBRE</li>
+                    <li><NavLink to="Gallery">Gallery</NavLink></li>
+                    <li><NavLink to="MarsRover">Project Mars Rover</NavLink></li>
+                    <li><NavLink to="about">About</NavLink></li>
                 </LinksPages>
             </nav>
 

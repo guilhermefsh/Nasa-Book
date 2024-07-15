@@ -25,6 +25,18 @@ export const LinksPages = styled.ul`
         margin:0 1rem;
         color:#A9A9A9;
     }
+    a{
+        text-decoration:none;
+            color:${props => props.theme['light-gray']};
+            
+            &:hover{
+            border-bottom:3px solid ${(props) => props.theme['dark-purple']}
+            }
+
+            &.active{
+            color:${(props) => props.theme['dark-purple']};
+            }
+    }
 `
 
 export const Icons = styled.div`

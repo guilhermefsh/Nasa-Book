@@ -23,10 +23,26 @@ export const NavBarContainer = styled.nav`
             font-weight:bold;
         }
         li{
-            font-size:24px;
+            font-size:1.2rem;
+        }
+        span{
+            font-size: 1.5rem;
         }
         strong{
             color:${props => props.theme['dark-purple']}
+        }
+
+        a{
+            text-decoration:none;
+            color:${props => props.theme.white};
+            
+            &:hover{
+            border-bottom:3px solid ${(props) => props.theme['dark-purple']}
+            }
+
+            &.active{
+            color:${(props) => props.theme['dark-purple']};
+            }
         }
 
 

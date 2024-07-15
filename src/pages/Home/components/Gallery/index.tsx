@@ -1,8 +1,10 @@
 import { GalleryContainer, GalleryContent, GalleryInfo, Image, ImageStyleColumn, ImageStylez } from "./styles"
+import Tilt from 'react-parallax-tilt'
 import Galaxy from '../../../../assets/images/galaxy1.png'
 import Galaxy2 from '../../../../assets/images/galaxy2.png'
 import Galaxy3 from '../../../../assets/images/galaxy3.png'
 import Galaxy4 from '../../../../assets/images/galaxy4.png'
+import { Link } from "react-router-dom"
 
 export const Gallery = () => {
 
@@ -14,12 +16,12 @@ export const Gallery = () => {
             <GalleryContent>
                 <Image>
                     <ImageStylez>
-                        <img src={Galaxy} alt="Satélite na Galáxia" />
-                        <img src={Galaxy3} alt="Cosmos na galáxia" />
+                        <Tilt><img src={Galaxy} alt="Satélite na Galáxia" /></Tilt>
+                        <Tilt><img src={Galaxy3} alt="Cosmos na galáxia" /></Tilt>
                     </ImageStylez>
                     <ImageStyleColumn>
-                        <img src={Galaxy2} alt="Estrelas na Galáxia" />
-                        <img src={Galaxy4} alt="Estrelas na Galáxia" />
+                        <Tilt><img src={Galaxy2} alt="Estrelas na Galáxia" /></Tilt>
+                        <Tilt><img src={Galaxy4} alt="Estrelas na Galáxia" /></Tilt>
                     </ImageStyleColumn>
                 </Image>
                 <GalleryInfo>
@@ -29,7 +31,7 @@ export const Gallery = () => {
                         uma experiência única de observar imagens reais capturadas pela NASA.
                         Clique no link abaixo e deixe-se maravilhar pela beleza e mistério do cosmos.
                     </p>
-                    <button>Explore a Galáxia!</button>
+                    <Link to="/gallery">Explore a Galáxia!</Link>
                 </GalleryInfo>
             </GalleryContent>
         </GalleryContainer>

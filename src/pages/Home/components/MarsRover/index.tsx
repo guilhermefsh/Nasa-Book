@@ -1,5 +1,7 @@
 import { MarsRoversContainer, MarsRoversContent } from "./styles"
 import MarsRoverImg from '../../../../assets/images/MarsRover.png'
+import Tilt from 'react-parallax-tilt'
+import { Link } from "react-router-dom"
 
 export const MarsRover = () => {
     return (
@@ -16,10 +18,10 @@ export const MarsRover = () => {
                         expandem nossos horizontes e aumentam nosso conhecimento sobre o
                         universo.
                     </p>
-                    <button>EXPLORAR MARTE!</button>
+                    <Link to="/marsrover">EXPLORAR MARTE!</Link>
                 </div>
                 <figure>
-                    <img src={MarsRoverImg} alt="Foto retirada na missão mars rovers" />
+                    <Tilt><img src={MarsRoverImg} alt="Foto retirada na missão mars rovers" /></Tilt>
                 </figure>
             </MarsRoversContent>
         </MarsRoversContainer>

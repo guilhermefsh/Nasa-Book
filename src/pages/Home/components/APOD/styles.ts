@@ -11,9 +11,10 @@ export const ApodContainer = styled.section`
     figure{
         img{
             width:100%;
-            max-width:500px;
+            max-width:400px;
             height:auto;
             filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
+            border-radius:20px;
         }
     }
 `
@@ -43,6 +44,10 @@ export const SearchApod = styled.div`
             border-radius:20px;
             text-transform:uppercase;
             padding:0.5rem;
+
+            &::-webkit-calendar-picker-indicator {
+                filter: invert(1); 
+                }
         }
         button{
             background-color:transparent;
@@ -81,4 +86,11 @@ export const InfoApodContainer = styled.div`
     text-align:center;
     margin: 10px 0;
    }
+`
+
+export const SpinnerContainer = styled.div`
+    display: 'flex';
+    justify-Content: 'center';
+    align-Items: 'center';
+    height: '100%';
 `
