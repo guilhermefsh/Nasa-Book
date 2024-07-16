@@ -19,9 +19,25 @@ export interface Item {
 export interface Data {
     nasa_id: string;
     title: string;
-
 }
 
 export interface Link {
     href: string;
+}
+
+export interface MarsPhoto {
+    id: number;
+    img_src: string;
+    earth_date: string;
+    sol: number;
+    rover: {
+        name: string;
+    };
+    camera: {
+        name: string;
+    };
+}
+
+export interface MarsApiResponse {
+    photos: MarsPhoto[];
 }

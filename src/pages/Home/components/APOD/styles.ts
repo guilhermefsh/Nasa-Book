@@ -87,10 +87,3 @@ export const InfoApodContainer = styled.div`
     margin: 10px 0;
    }
 `
-
-export const SpinnerContainer = styled.div`
-    display: 'flex';
-    justify-Content: 'center';
-    align-Items: 'center';
-    height: '100%';
-`

@@ -4,6 +4,7 @@ import { Home } from "../pages/Home";
 import { Gallery } from "../pages/Gallery";
 import { About } from "../pages/About";
 import { PageNotFound } from "../pages/404";
+import { MarsRover } from "../pages/MarsRover";
 
 export const Router = () => (
   <Routes>
@@ -11,6 +12,7 @@ export const Router = () => (
       <Route index element={<Home />} />
       <Route path='gallery' element={<Gallery />} />
       <Route path='about' element={<About />} />
+      <Route path='marsrover' element={<MarsRover />} />
       <Route path='*' element={<PageNotFound />} />
     </Route>
   </Routes>
