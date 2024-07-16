@@ -1,11 +1,12 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { ApodContainer, InfoApodContainer, SearchApod, SpinnerContainer } from './styles';
-import { ApodData } from '../../../../interfaces/apoddata';
+import { ApodContainer, InfoApodContainer, SearchApod } from './styles';
+import { ApodData } from '../../../../interfaces/Api';
 import { apodAPI } from '../../../../lib/axios';
 import { RingLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
+import { SpinnerContainer } from '../../../../styles/spinners/spinnersStyles';
 
 export const APOD = () => {
     const currentDate = new Date().toISOString().slice(0, 10);
@@ -27,7 +28,7 @@ export const APOD = () => {
             });
             setApodData(response.data);
         } catch (error) {
-            toast.error('Imagem do Dia atual ainda não foi atualizada, iremos carregar do dai anterior! ' + error);
+            toast.error('Imagem do Dia atual ainda não foi atualizada, iremos carregar a do  anterior! ');
             const yesterday = new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().slice(0, 10);
             try {
                 const response = await apodAPI.get('', {

@@ -89,7 +89,7 @@ export const GalleryInfo = styled.div`
         border-radius: 20px;
         cursor: pointer;
         filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
-
+        text-transform:uppercase;
         &:hover {
             background-color: ${props => props.theme['dark-purple']};
         }

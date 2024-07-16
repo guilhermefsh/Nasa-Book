@@ -40,7 +40,7 @@ export const SearchApod = styled.div`
             border:3px solid ${props => props.theme['dark-purple']};
             color:${props => props.theme.white};
             font-weight:bold;
-            font-size:20px;
+            font-size:1.2rem;
             border-radius:20px;
             text-transform:uppercase;
             padding:0.5rem;
