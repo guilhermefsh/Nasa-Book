@@ -10,8 +10,11 @@ export const GalleryContainer = styled.section`
 
     h3 {
         text-align: center;
+        text-transform:uppercase;
         font-size: 2rem;
         font-weight: bold;
+        font-size:2.5rem;
+        margin-bottom:.5rem;
         filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
     }
 `;
