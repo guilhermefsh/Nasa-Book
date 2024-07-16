@@ -5,14 +5,17 @@ import { GlobalStyles } from "./styles/globalstyles"
 import { Router } from "./routes/router"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import { BookProvider } from "./contexts/BookContext"
 
 function App() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
-        <ToastContainer />
-        <Router />
+        <BookProvider>
+          <ToastContainer />
+          <Router />
+        </BookProvider>
       </ThemeProvider>
     </BrowserRouter >
   )

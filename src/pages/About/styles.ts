@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const AboutContainer = styled.main`
-    height:100vh;
-    margin: auto;
+    margin: 12rem 0;
     display:flex;
     flex-direction:column;
     justify-content:center;

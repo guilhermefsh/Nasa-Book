@@ -1,39 +1,14 @@
-import React, { ChangeEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, useContext, useState } from 'react';
 import { GalleryContainer, MainContent } from './styles';
-import { galleryAPI } from '../../lib/axios';
-import { GalleryData, Item } from '../../interfaces/Api';
-import { toast } from 'react-toastify';
 import Tilt from 'react-parallax-tilt';
 import { SpinnerContainer } from '../../styles/spinners/spinnersStyles';
 import { RingLoader } from 'react-spinners';
+import { BookContext } from '../../contexts/BookContext';
+import { Item } from '../../interfaces/Api';
 
 export const Gallery = () => {
-
+    const { galleryData, searchGallery, loading } = useContext(BookContext);
     const [galleryImg, setGalleryImg] = useState('galaxy');
-    const [galleryData, setGalleryData] = useState<Item[]>([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        searchGallery(galleryImg); // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    async function searchGallery(galleryImg: string) {
-        setLoading(true);
-        try {
-            const response = await galleryAPI.get<GalleryData>('', {
-                params: {
-                    q: galleryImg
-                }
-            });
-            console.log('API Response:', response.data);
-            setGalleryData(response.data.collection.items);
-        } catch (error) {
-            console.error('API Error:', error);
-            toast.error('Ocorreu um erro ao pesquisar as imagens, por favor, busque novamente');
-        } finally {
-            setLoading(false);
-        }
-    }
 
     function handleSearchGallery(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
