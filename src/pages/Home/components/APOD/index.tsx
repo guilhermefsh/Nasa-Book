@@ -5,6 +5,7 @@ import { apodAPI } from '../../../../lib/axios';
 import { RingLoader } from 'react-spinners';
 import { toast } from 'react-toastify';
 import Tilt from 'react-parallax-tilt';
+import { motion } from 'framer-motion';
 
 export const APOD = () => {
     const currentDate = new Date().toISOString().slice(0, 10);
@@ -13,12 +14,10 @@ export const APOD = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        searchApod();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        searchApod();        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     async function searchApod() {
-        if (!dateApod) return;
         setLoading(true);
         try {
             const response = await apodAPI.get('', {
@@ -28,7 +27,19 @@ export const APOD = () => {
             });
             setApodData(response.data);
         } catch (error) {
-            toast.error('Ocorreu um erro, tente outra data! ' + error);
+            toast.error('Imagem do Dia atual ainda não foi atualizada, iremos carregar do dai anterior! ' + error);
+            const yesterday = new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().slice(0, 10);
+            try {
+                const response = await apodAPI.get('', {
+                    params: {
+                        date: yesterday
+                    }
+                });
+                setApodData(response.data);
+                setDateApod(yesterday);
+            } catch (error) {
+                toast.error('Não foi possível carregar a imagem astronômica.');
+            }
         } finally {
             setLoading(false);
         }
@@ -59,7 +70,12 @@ export const APOD = () => {
                         <RingLoader color="#510B96" loading={loading} />
                     </SpinnerContainer>
                 ) : (
-                    <>
+                    <motion.div
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                    >
                         <figure>
                             <Tilt><img src={apodData?.url} alt={apodData?.title || 'Nasa Image galaxy'} /></Tilt>
                         </figure>
@@ -67,7 +83,7 @@ export const APOD = () => {
                             <h4>{apodData?.title}</h4>
                             <p>{apodData?.explanation}</p>
                         </div>
-                    </>
+                    </motion.div>
                 )}
             </InfoApodContainer>
         </ApodContainer>

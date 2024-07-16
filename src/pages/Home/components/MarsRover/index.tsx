@@ -2,8 +2,15 @@ import { MarsRoversContainer, MarsRoversContent } from "./styles"
 import MarsRoverImg from '../../../../assets/images/MarsRover.png'
 import Tilt from 'react-parallax-tilt'
 import { Link } from "react-router-dom"
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export const MarsRover = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
+
     return (
         <MarsRoversContainer>
             <h4>CONHEÇA O MARS  ROVER!</h4>
@@ -21,7 +28,14 @@ export const MarsRover = () => {
                     <Link to="/marsrover">EXPLORAR MARTE!</Link>
                 </div>
                 <figure>
-                    <Tilt><img src={MarsRoverImg} alt="Foto retirada na missão mars rovers" /></Tilt>
+                    <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, x: 100 }}
+                        animate={inView ? { opacity: 1, x: 0 } : {}}
+                        transition={{ duration: 2 }}
+                    >
+                        <Tilt><img src={MarsRoverImg} alt="Foto retirada na missão mars rovers" /></Tilt>
+                    </motion.div>
                 </figure>
             </MarsRoversContent>
         </MarsRoversContainer>

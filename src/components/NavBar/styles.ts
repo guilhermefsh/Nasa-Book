@@ -7,7 +7,6 @@ export const Header = styled.header`
     width:100%;
     padding:1rem;
     filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
-
 `
 
 export const NavBarContainer = styled.nav`

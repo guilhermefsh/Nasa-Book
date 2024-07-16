@@ -5,8 +5,16 @@ import Galaxy2 from '../../../../assets/images/galaxy2.png'
 import Galaxy3 from '../../../../assets/images/galaxy3.png'
 import Galaxy4 from '../../../../assets/images/galaxy4.png'
 import { Link } from "react-router-dom"
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 
 export const Gallery = () => {
+
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1
+    });
 
     return (
         <GalleryContainer>
@@ -15,14 +23,21 @@ export const Gallery = () => {
             </div>
             <GalleryContent>
                 <Image>
-                    <ImageStylez>
-                        <Tilt><img src={Galaxy} alt="Satélite na Galáxia" /></Tilt>
-                        <Tilt><img src={Galaxy3} alt="Cosmos na galáxia" /></Tilt>
-                    </ImageStylez>
-                    <ImageStyleColumn>
-                        <Tilt><img src={Galaxy2} alt="Estrelas na Galáxia" /></Tilt>
-                        <Tilt><img src={Galaxy4} alt="Estrelas na Galáxia" /></Tilt>
-                    </ImageStyleColumn>
+                    <motion.div
+                        ref={ref}
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={inView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 2 }}
+                    >
+                        <ImageStylez>
+                            <Tilt><img src={Galaxy} alt="Satélite na Galáxia" /></Tilt>
+                            <Tilt><img src={Galaxy3} alt="Cosmos na galáxia" /></Tilt>
+                        </ImageStylez>
+                        <ImageStyleColumn>
+                            <Tilt><img src={Galaxy2} alt="Estrelas na Galáxia" /></Tilt>
+                            <Tilt><img src={Galaxy4} alt="Estrelas na Galáxia" /></Tilt>
+                        </ImageStyleColumn>
+                    </motion.div>
                 </Image>
                 <GalleryInfo>
                     <span>Explore as <strong>Galáxias!</strong></span>
