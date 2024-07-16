@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FormContainer, MarsImages, SunDistance } from "./styles";
 import { MarsApiResponse, MarsPhoto } from "../../../../interfaces/Api";
 import { key, marsApi } from "../../../../lib/axios";
@@ -9,22 +9,30 @@ import { formatDate } from "../../../../utils/formatDate";
 import Tilt from 'react-parallax-tilt';
 
 export const SearchMR = () => {
-    const [sol, setSol] = useState<number | string>('');
-    const [camera, setCamera] = useState<string>('');
+    const [sol, setSol] = useState<number | string>('800');
+    const [camera, setCamera] = useState<string>('FHAZ');
     const [photos, setPhotos] = useState<MarsPhoto[]>([]);
     const [loading, setLoading] = useState(false);
 
-    const handleSolChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value;
+    useEffect(() => {
+        SearchMarsPhotos();
+    }, [])
+
+    const handleSolChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
         setSol(value ? parseInt(value) : '100');
     };
 
-    const handleCameraChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setCamera(event.target.value);
+    const handleCameraChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setCamera(e.target.value);
     };
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        SearchMarsPhotos();
+    };
+
+    async function SearchMarsPhotos() {
         try {
             setLoading(true);
             const fetchMarsPhotos = (sol: number, camera?: string) => {
@@ -44,7 +52,7 @@ export const SearchMR = () => {
             toast.error('Erro ao buscar fotos');
             setLoading(false);
         }
-    };
+    }
 
     return (
         <>
@@ -64,7 +72,6 @@ export const SearchMR = () => {
                 </SunDistance>
 
                 <select value={camera} onChange={handleCameraChange}>
-                    <option value="">Escolha a câmera</option>
                     <option value="FHAZ">Front Hazard Avoidance Camera</option>
                     <option value="RHAZ">Rear Hazard Avoidance Camera</option>
                     <option value="MAST">Mast Camera</option>
