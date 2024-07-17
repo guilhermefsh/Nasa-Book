@@ -20,6 +20,7 @@ export const APOD = () => {
 
     async function searchApod() {
         setLoading(true);
+
         try {
             const response = await apodAPI.get('', {
                 params: {
@@ -27,6 +28,7 @@ export const APOD = () => {
                 }
             });
             setApodData(response.data);
+
         } catch (error) {
             toast.error('Imagem do Dia atual ainda não foi atualizada, iremos carregar a do  anterior! ');
             const yesterday = new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().slice(0, 10);
@@ -38,9 +40,11 @@ export const APOD = () => {
                 });
                 setApodData(response.data);
                 setDateApod(yesterday);
+
             } catch (error) {
                 toast.error('Não foi possível carregar a imagem astronômica.');
             }
+
         } finally {
             setLoading(false);
         }

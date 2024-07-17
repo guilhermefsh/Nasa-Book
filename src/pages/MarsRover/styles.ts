@@ -18,6 +18,8 @@ export const MarsRoverContainer = styled.section`
 export const MarsRoverInfo = styled.div`
     display:flex;
     align-items:center;
+    justify-content:center;
+    padding:1rem;
     gap:80px;
     div{
         text-align:center;
@@ -38,6 +40,10 @@ export const MarsRoverInfo = styled.div`
                 filter: drop-shadow(8px 8px 8px ${props => props.theme.black});
             }
         }
+    }
+
+    @media (max-width:924px) {
+        flex-direction:column-reverse;
     }
 `
 

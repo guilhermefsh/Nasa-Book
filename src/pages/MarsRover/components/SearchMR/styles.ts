@@ -4,6 +4,7 @@ export const FormContainer = styled.form`
     margin: 4.5rem 0;
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:40px;
 
     input[type=range]{
@@ -30,7 +31,7 @@ export const FormContainer = styled.form`
         border: 3px solid ${props => props.theme["light-gray"]};
         border-radius: 50%;
         cursor: pointer;
-}
+    }
 
         button{
             background-color:transparent;
@@ -65,6 +66,10 @@ export const FormContainer = styled.form`
             background-color:${props => props.theme['dark-purple']};
             padding:1rem;
         }
+
+        @media (max-width:754px) {
+            flex-direction:column;
+        }
 `
 
 export const SunDistance = styled.div`
@@ -73,18 +78,23 @@ export const SunDistance = styled.div`
     gap:20px;
     margin-top:2.5rem;
     align-items:center;
+    @media (max-width:754px) {
+            input{
+                width:400px;
+            }
+        }
 `
 
 export const MarsImages = styled.div`
     display:flex;
-    margin: 0 2rem 3rem 2rem;
+    justify-content:center;
     flex-wrap:wrap;
 
     figure{
         margin: 1rem 1rem 1rem 1.7rem;
         img{
-            height:180px;
-            width:200px;
+            height:280px;
+            width:300px;
             border-radius: 25px 25px 0 0;
         }
 

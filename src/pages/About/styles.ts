@@ -7,6 +7,7 @@ export const AboutContainer = styled.main`
     justify-content:center;
     align-items:center;
     gap:40px;
+    padding:1rem;
 
 `
 
@@ -32,6 +33,7 @@ export const AboutLinks = styled.div`
     a{
         text-decoration:none;
         color:${props => props.theme['light-gray']};
+        margin: 0.4rem 0;
 
         &:hover{
             text-decoration:underline ${props => props.theme['light-purple']};

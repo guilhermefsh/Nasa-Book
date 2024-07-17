@@ -17,6 +17,14 @@ export const ApodContainer = styled.section`
             border-radius:20px;
         }
     }
+
+    @media (max-width:600px) {
+        figure{
+            img{
+                max-width:340px;
+            }
+        }
+    }
 `
 
 export const SearchApod = styled.div`
@@ -65,6 +73,12 @@ export const SearchApod = styled.div`
             }
         }
     }
+
+    @media(max-width:600px){
+        h4{
+            font-size:1.5rem;
+        }
+    }
 `
 
 export const InfoApodContainer = styled.div`
@@ -80,10 +94,17 @@ export const InfoApodContainer = styled.div`
     p{
         width:100%;
         max-width:1100px;
+        padding:0.5rem;
     }
 
    h4,p{
     text-align:center;
     margin: 10px 0;
    }
+
+   @media(max-width:600px){
+        p{
+            padding:1rem;   
+        }
+    }
 `

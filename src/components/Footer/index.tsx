@@ -5,7 +5,9 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 export const Footer = () => {
     return (
         <FooterContainer>
-            <span>Nasa<strong>Book</strong></span>
+            <span>Nasa
+                <strong>Book</strong>
+            </span>
 
             <nav>
                 <LinksPages>
@@ -17,8 +19,19 @@ export const Footer = () => {
 
 
             <Icons>
-                <a href='#'><FaGithub size={40} /></a>
-                <a href='#'><FaLinkedin size={40} /></a>
+                <a
+                    href='https://github.com/guilhermefsh'
+                    target='_blank'
+                >
+                    <FaGithub size={40} />
+                </a>
+
+                <a
+                    href='https://www.linkedin.com/in/guilhermefsh/'
+                    target='_blank'
+                >
+                    <FaLinkedin size={40} />
+                </a>
             </Icons>
         </FooterContainer>
     )

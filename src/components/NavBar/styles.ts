@@ -19,13 +19,14 @@ export const NavBarContainer = styled.nav`
         ul{
             display:flex;
             justify-content:space-between;
+            align-items:center;
             font-weight:bold;
         }
         li{
             font-size:1.2rem;
         }
         span{
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
         strong{
             color:${props => props.theme['dark-purple']}
@@ -44,5 +45,14 @@ export const NavBarContainer = styled.nav`
             }
         }
 
+    @media(max-width: 500px)  {
+        li{
+            font-size:1.1rem;
+        }
+        
+        span{
+            font-size:1.7rem;
+        }
+    }
 
 `

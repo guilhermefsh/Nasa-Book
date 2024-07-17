@@ -17,7 +17,8 @@ export const MarsRover = () => {
             <MarsRoversContent>
                 <div>
                     <span>EXPLORE O <strong>MARS ROVER</strong>!</span>
-                    <p>Descubra as maravilhas de Marte com o Mars Rover! Esta seção oferece
+                    <p>
+                        Descubra as maravilhas de Marte com o Mars Rover! Esta seção oferece
                         uma visão incrível das explorações realizadas pelos rovers da NASA no
                         planeta vermelho. Conheça mais sobre a superfície marciana, as descobertas
                         científicas e a tecnologia inovadora que torna essas missões possíveis.

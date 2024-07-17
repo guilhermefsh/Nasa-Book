@@ -1,19 +1,33 @@
 import styled from "styled-components";
 
 export const MarsRoversContainer = styled.section`
-    height: 100vh;
-    margin-top:40px;
+    height: auto;
+    margin-top:4rem;
+    margin-bottom:1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap:80px;
+    padding:1rem;
     flex-direction:column;
     h4{
         font-size:2.5rem;
         font-weight:bold;
         filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
-
     }
+    @media(max-width:884px){
+
+        h4{
+            font-size:2.3rem;
+            text-align:center;
+            margin-bottom:12rem;
+        }
+
+        div{
+            margin-top:-5rem;
+        }
+    }
+
 `
 
 export const MarsRoversContent = styled.div`
@@ -59,4 +73,19 @@ export const MarsRoversContent = styled.div`
         }
     }
     }
+
+    @media(max-width:884px){
+        div{
+            figure{
+                max-width:200px;
+            }
+        }
+        flex-direction:column-reverse;
+    }
+    @media(max-width:504px){
+        figure{
+            padding:1rem;
+            width:400px;
+        }
+        }
 `

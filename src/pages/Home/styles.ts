@@ -16,6 +16,12 @@ export const TitlePageContainer = styled.div`
         font-weight:lighter;
         text-transform:uppercase;
     }
+
+    @media (max-width:800px) {
+        h1{
+            text-align:center;
+        }
+    }
 `
 
 export const SeeMore = styled.div`

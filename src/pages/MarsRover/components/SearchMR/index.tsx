@@ -67,7 +67,7 @@ export const SearchMR = () => {
                         required
                     />
                     <div>
-                        <span>Distância: {sol}</span>
+                        <span>Distância do sol: {sol}</span>
                     </div>
                 </SunDistance>
 

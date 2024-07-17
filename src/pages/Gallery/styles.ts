@@ -10,6 +10,7 @@ export const GalleryContainer = styled.div`
     h2{
         margin-top:1rem;
         font-size:2rem;
+        text-align:center;
     }
     
     form{
@@ -50,6 +51,7 @@ export const GalleryContainer = styled.div`
 
 export const MainContent = styled.main`
     display:flex;
+    justify-content:center;
     gap:30px;
     padding:1.5rem;
     flex-wrap:wrap;
@@ -80,5 +82,9 @@ export const MainContent = styled.main`
         margin:5rem 0;
         font-size:1.5rem;
         padding:1rem;
+    }
+
+    @media (max-width:1024px) {
+        
     }
 `

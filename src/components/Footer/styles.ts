@@ -34,7 +34,7 @@ export const LinksPages = styled.ul`
             }
 
             &.active{
-            color:${(props) => props.theme['dark-purple']};
+            color:${(props) => props.theme.white};
             }
     }
 `

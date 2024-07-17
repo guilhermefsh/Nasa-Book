@@ -17,6 +17,17 @@ export const GalleryContainer = styled.section`
         margin-bottom:.5rem;
         filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
     }
+
+    @media(max-width:764px){
+        margin: 4rem 0;
+        margin-bottom:7rem;
+    }
+
+    @media(max-width:600px){
+        h3{
+            font-size:1.5rem;
+        }
+    }
 `;
 
 export const GalleryContent = styled.div`
@@ -26,6 +37,21 @@ export const GalleryContent = styled.div`
     width: 100%;
     max-width: 1200px;
     padding: 0 20px;
+
+    @media(max-width:890px){
+        flex-direction:column;
+        div{
+            gap:20px;
+            margin:0.75rem 0;
+        }
+    }
+
+    @media(max-width:600px){
+        flex-direction:column;
+        div{
+            gap:20px;
+        }
+    }
 `;
 
 export const Image = styled.div`
@@ -41,6 +67,21 @@ export const Image = styled.div`
             max-width: 220px;
             height: auto;
         }
+    }
+
+    @media(max-width:974px){
+
+        div{
+            gap:20px;
+
+            img{
+                max-width:200px;
+            }
+        }
+    }
+
+    @media(max-width:600px){
+        flex-direction:column;
     }
 `;
 
