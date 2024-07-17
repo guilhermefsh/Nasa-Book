@@ -5,10 +5,12 @@ import { SpinnerContainer } from '../../styles/spinners/spinnersStyles';
 import { RingLoader } from 'react-spinners';
 import { BookContext } from '../../contexts/BookContext';
 import { Item } from '../../interfaces/Api';
+import { useNavigate } from 'react-router-dom';
 
 export const Gallery = () => {
     const { galleryData, searchGallery, loading } = useContext(BookContext);
     const [galleryImg, setGalleryImg] = useState('galaxy');
+    const navigate = useNavigate()
 
     function handleSearchGallery(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -17,6 +19,10 @@ export const Gallery = () => {
 
     function handleImageChange(e: ChangeEvent<HTMLInputElement>) {
         setGalleryImg(e.target.value);
+    }
+
+    function handleInfoImage(nasa_id: string) {
+        navigate(`infogallery/${nasa_id}`)
     }
 
     return (
@@ -45,7 +51,7 @@ export const Gallery = () => {
                             const imageUrl = links[0].href;
 
                             return (
-                                <picture key={nasa_id}>
+                                <picture key={nasa_id} onClick={() => handleInfoImage(nasa_id)}>
                                     <Tilt>
                                         <img src={imageUrl} alt={title} />
                                         <figcaption>{title}</figcaption>

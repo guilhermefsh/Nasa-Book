@@ -16,6 +16,23 @@ export interface Item {
     links: Link[];
 }
 
+export interface Photos {
+    data: {
+        title: string;
+        date_created: string;
+        description: string;
+    }[];
+    links: {
+        href: string;
+    }[];
+}
+
+export interface PhotosData {
+    collection: {
+        items: Photos[];
+    };
+}
+
 export interface Data {
     nasa_id: string;
     title: string;

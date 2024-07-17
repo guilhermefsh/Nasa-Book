@@ -62,6 +62,7 @@ export const MainContent = styled.main`
             width:100%;
             width:200px;
             height:200px;
+            cursor:pointer;
         }
 
         figcaption{

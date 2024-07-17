@@ -12,14 +12,19 @@ export const Home = () => {
                     <h1>Explore a galáxia com imagens oficias da nasa!</h1>
                     <GiGalaxy size={40} />
                 </TitlePageContainer>
+
                 <div>
                     <SeeMore>
                         <p>DECOLE PARA MAIS INFORMAÇÕES</p>
                     </SeeMore>
                 </div>
+
             </HomeContainer>
+
             <APOD />
+
             <Gallery />
+
             <MarsRover />
         </>
     )
