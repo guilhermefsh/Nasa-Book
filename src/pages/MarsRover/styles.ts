@@ -13,6 +13,11 @@ export const MarsRoverContainer = styled.section`
         font-size:2.5rem;
         font-weight:bold;
     }
+    @media(max-width:500px){
+        h2{
+            margin-top:2rem;
+        }
+    }
 `
 
 export const MarsRoverInfo = styled.div`
@@ -44,6 +49,13 @@ export const MarsRoverInfo = styled.div`
 
     @media (max-width:924px) {
         flex-direction:column-reverse;
+    }
+    @media (max-width:500px) {
+        figure{
+            img{
+                width:330px;
+            }
+        }
     }
 `
 

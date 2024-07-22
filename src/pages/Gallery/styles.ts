@@ -34,6 +34,13 @@ export const GalleryContainer = styled.div`
             margin: 0 .5rem;
         }
     }
+
+    @media(max-width:500px){
+        h2{
+            margin-top:4rem;
+            padding:1rem;
+        }
+    }
 `
 
 export const MainContent = styled.main`

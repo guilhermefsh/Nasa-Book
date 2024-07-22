@@ -70,6 +70,11 @@ export const FormContainer = styled.form`
         @media (max-width:754px) {
             flex-direction:column;
         }
+        @media (max-width:924px) {
+            select{
+                width:320px;
+            }
+    }
 `
 
 export const SunDistance = styled.div`
@@ -83,6 +88,11 @@ export const SunDistance = styled.div`
                 width:400px;
             }
         }
+    @media (max-width:500px) {
+        input{
+            width:320px;
+        }
+    }
 `
 
 export const MarsImages = styled.div`

@@ -87,5 +87,8 @@ export const MarsRoversContent = styled.div`
             padding:1rem;
             width:400px;
         }
+        div{
+            padding:1.5rem;
         }
+    }
 `
