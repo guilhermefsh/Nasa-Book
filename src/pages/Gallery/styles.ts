@@ -32,19 +32,6 @@ export const GalleryContainer = styled.div`
         }
         button{
             margin: 0 .5rem;
-            background-color:transparent;
-            color:${props => props.theme.white};
-            border:3px solid ${props => props.theme['dark-purple']};
-            border-radius:20px;
-            text-transform:uppercase;
-            padding:0.5rem;
-            width:100px;
-            cursor: pointer;
-
-            &:hover{
-                background-color:${props => props.theme['light-purple']};
-                font-size:bold;
-            }
         }
     }
 `

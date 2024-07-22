@@ -57,21 +57,6 @@ export const SearchApod = styled.div`
                 filter: invert(1); 
                 }
         }
-        button{
-            background-color:transparent;
-            color:${props => props.theme.white};
-            border:3px solid ${props => props.theme['dark-purple']};
-            border-radius:20px;
-            text-transform:uppercase;
-            padding:0.5rem;
-            width:100px;
-            cursor: pointer;
-
-            &:hover{
-                background-color:${props => props.theme['light-purple']};
-                font-size:bold;
-            }
-        }
     }
 
     @media(max-width:600px){

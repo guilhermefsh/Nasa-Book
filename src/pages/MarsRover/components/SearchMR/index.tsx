@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FormContainer, MarsImages, SunDistance } from "./styles";
 import { MarsApiResponse, MarsPhoto } from "../../../../interfaces/Api";
 import { key, marsApi } from "../../../../lib/axios";
 import { toast } from "react-toastify";
-import { SpinnerContainer } from "../../../../styles/spinners/spinnersStyles";
-import { RingLoader } from "react-spinners";
 import { formatDate } from "../../../../utils/formatDate";
 import Tilt from 'react-parallax-tilt';
+import { Loader } from "../../../../components/Loader";
+import { BookContext } from "../../../../contexts/BookContext";
+import { ButtonComponent } from "../../../../components/button";
 
 export const SearchMR = () => {
     const [sol, setSol] = useState<number | string>('800');
     const [camera, setCamera] = useState<string>('FHAZ');
     const [photos, setPhotos] = useState<MarsPhoto[]>([]);
-    const [loading, setLoading] = useState(false);
+    const { loading, setLoading } = useContext(BookContext);
 
     useEffect(() => {
         SearchMarsPhotos();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleSolChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,13 +25,9 @@ export const SearchMR = () => {
         setSol(value ? parseInt(value) : '100');
     };
 
-    const handleCameraChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        setCamera(e.target.value);
-    };
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        SearchMarsPhotos();
+        await SearchMarsPhotos();
     };
 
     async function SearchMarsPhotos() {
@@ -71,7 +69,7 @@ export const SearchMR = () => {
                     </div>
                 </SunDistance>
 
-                <select value={camera} onChange={handleCameraChange}>
+                <select value={camera} onChange={(e) => setCamera(e.target.value)}>
                     <option value="FHAZ">Front Hazard Avoidance Camera</option>
                     <option value="RHAZ">Rear Hazard Avoidance Camera</option>
                     <option value="MAST">Mast Camera</option>
@@ -80,13 +78,11 @@ export const SearchMR = () => {
                     <option value="MARDI">Mars Descent Imager</option>
                     <option value="NAVCAM">Navigation Camera</option>
                 </select>
-                <button type='submit'>BUSCAR</button>
+                <ButtonComponent type='submit'>BUSCAR</ButtonComponent>
             </FormContainer>
 
             {loading ? (
-                <SpinnerContainer>
-                    <RingLoader color="#510b96" loading={loading} />
-                </SpinnerContainer>
+                <Loader />
             ) : (
                 <MarsImages>
                     {photos.length === 0 ? (

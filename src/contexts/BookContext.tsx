@@ -49,7 +49,7 @@ export function BookProvider({ children }: BookProviderProps) {
     }
 
     return (
-        <BookContext.Provider value={{ galleryData, loading, searchGallery, infoGallery, photosData }}>
+        <BookContext.Provider value={{ galleryData, loading, searchGallery, infoGallery, photosData, setLoading }}>
             {children}
         </BookContext.Provider>
     );

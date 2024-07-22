@@ -1,11 +1,11 @@
-import React, { ChangeEvent, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { GalleryContainer, MainContent } from './styles';
 import Tilt from 'react-parallax-tilt';
-import { SpinnerContainer } from '../../styles/spinners/spinnersStyles';
-import { RingLoader } from 'react-spinners';
 import { BookContext } from '../../contexts/BookContext';
 import { Item } from '../../interfaces/Api';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from '../../components/Loader';
+import { ButtonComponent } from '../../components/button';
 
 export const Gallery = () => {
     const { galleryData, searchGallery, loading } = useContext(BookContext);
@@ -15,10 +15,6 @@ export const Gallery = () => {
     function handleSearchGallery(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         searchGallery(galleryImg);
-    }
-
-    function handleImageChange(e: ChangeEvent<HTMLInputElement>) {
-        setGalleryImg(e.target.value);
     }
 
     function handleInfoImage(nasa_id: string) {
@@ -33,15 +29,13 @@ export const Gallery = () => {
                     type="text"
                     placeholder='galaxy'
                     required
-                    onChange={handleImageChange}
+                    onChange={(e) => setGalleryImg(e.target.value)}
                 />
-                <button type='submit'>Buscar</button>
+                <ButtonComponent type='submit'>Buscar</ButtonComponent>
             </form>
             <MainContent>
                 {loading ? (
-                    <SpinnerContainer>
-                        <RingLoader color="#510b96" loading={loading} />
-                    </SpinnerContainer>
+                    <Loader />
                 ) : (
                     galleryData.length > 0 ? (
                         galleryData.filter(item => item.links && item.links.length > 0).map((item: Item) => {
