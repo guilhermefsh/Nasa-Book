@@ -11,7 +11,10 @@ export const InfoGallery = () => {
     const { infoGallery, photosData } = useContext(BookContext);
 
     useEffect(() => {
-        infoGallery(nasa_id);
+
+        if (nasa_id) {
+            infoGallery(nasa_id);
+        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [nasa_id]);
 

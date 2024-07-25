@@ -11,7 +11,7 @@ export const ApodContainer = styled.section`
     figure{
         img{
             width:100%;
-            max-width:400px;
+            max-width:700px;
             height:auto;
             filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
             border-radius:20px;
@@ -31,9 +31,11 @@ export const SearchApod = styled.div`
     display:flex;
     flex-direction:column;
     gap:14px;
+    margin-bottom:1rem;
 
     h4{
         font-size:2.3rem;
+        text-align:center;
         filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
     }
     

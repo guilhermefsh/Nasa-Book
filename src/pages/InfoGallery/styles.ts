@@ -13,7 +13,8 @@ export const InfoGContainer = styled.div`
     figure{
         
         img{
-            width:500px;
+            width:100%;;
+            max-width:500px;
             max-height:500px;
             border-radius:20px;
         }
@@ -24,21 +25,15 @@ export const InfoGContainer = styled.div`
             margin-bottom:1.5rem;
         }
     }
-    @media (max-width:590px) {
-        figure{
-            img{
-                width:400px;
-            }
-        }
-    }
-
 `
 
 export const InfoContainer = styled.div`
-    width:500px;
-    max-height:500px;
+    width:100%;
+    max-width:500px;
+    padding:1rem;
+    max-height:600px;
     display:flex;
-    text-align:center;
+    text-align:justify;
     align-items:center;
     flex-direction:column;
     gap:10px;
@@ -46,8 +41,16 @@ export const InfoContainer = styled.div`
     
 
     h3{
+        text-align:center;;
         font-size:2.5rem;
         font-weight:bold;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+
+    p{
+        word-wrap: break-word;
+        word-break: break-word;
     }
 
     &::-webkit-scrollbar{
@@ -56,14 +59,21 @@ export const InfoContainer = styled.div`
 
     @media (max-width:1070px) {
             p{
-                text-align:center;
-                max-width:300px;
+                padding:1rem;
+                width:100%;
+                max-width:1100px;
             }
         }
 
     @media (max-width:500px) {
         h3{
-            font-size:1.7rem
+            font-size:1.7rem;
+            max-width:350px;
+        }
+
+        p{
+            text-align:justify;
+            max-width:350px;
         }
     }
 `

@@ -5,7 +5,7 @@ export const Header = styled.header`
     align-items:center;
     justify-content:center;
     width:100%;
-    padding:1rem;
+    padding:1.5rem;
     filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
 `
 
@@ -45,15 +45,12 @@ export const NavBarContainer = styled.nav`
             }
         }
 
-    @media(max-width: 500px)  {
-        /* li{
-            font-size:1.1rem;
+        img{
+            width:200px;
+            height:40px;
         }
-        
-        span{
-            font-size:1.7rem;
-        } */
 
+    @media(max-width: 500px)  {
             display:none;
     }
 `
@@ -77,6 +74,11 @@ export const NavMenuContainer = styled.nav<NavMenuContainerProps>`
     @media (min-width:500px) {
         display:none;
     }
+
+    img{
+            width:200px;
+            height:40px;
+        }
 
     i{
         cursor: pointer;

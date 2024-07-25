@@ -2,6 +2,7 @@ import { Header, NavBarContainer, NavMenuContainer } from "./styles"
 import { Link, NavLink } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useState } from "react";
+import logo from '../../assets/images/NasaBook.svg'
 
 
 export const NavBar = () => {
@@ -17,14 +18,18 @@ export const NavBar = () => {
                 <ul>
                     <li><NavLink to="/marsrover">Mars Rover</NavLink></li>
                     <li>
-                        <Link to='/'><span>Nasa<strong>Book</strong></span></Link>
+                        <Link to='/'>
+                            <img src={logo} alt="NasaBook" />
+                        </Link>
                     </li>
                     <li><NavLink to="/gallery">Gallery</NavLink></li>
                 </ul>
             </NavBarContainer>
 
             <NavMenuContainer isOpen={isOpen}>
-                <Link to='/'><span>Nasa<strong>Book</strong></span></Link>
+                <Link to='/'>
+                    <img src={logo} alt="NasaBook" />
+                </Link>
                 <i onClick={toggleMenu}><GiHamburgerMenu size={40} /></i>
                 <ul>
                     <li><NavLink to="/marsrover">Mars Rover</NavLink></li>

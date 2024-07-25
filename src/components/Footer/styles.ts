@@ -10,11 +10,12 @@ export const FooterContainer = styled.footer`
     border-top:3px solid ${props => props.theme['dark-purple']};
     filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
 
-    span{
-        font-size:2.5rem;
-    }
-    strong{
-        color:${props => props.theme['light-purple']}
+    figure{
+        margin-left:1.6rem;
+        img{
+            width:160px;
+            height:50px;
+        }
     }
 `
 

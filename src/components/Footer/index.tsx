@@ -1,13 +1,14 @@
 import { NavLink } from 'react-router-dom'
 import { FooterContainer, Icons, LinksPages } from './styles'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import logo from '../../assets/images/NasaBook.svg'
 
 export const Footer = () => {
     return (
         <FooterContainer>
-            <span>Nasa
-                <strong>Book</strong>
-            </span>
+            <figure>
+                <img src={logo} alt="NasaBook" />
+            </figure>
 
             <nav>
                 <LinksPages>
