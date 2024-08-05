@@ -9,7 +9,7 @@ import { BookProvider } from "./contexts/BookContext"
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Nasa-Book">
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <BookProvider>
