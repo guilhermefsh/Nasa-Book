@@ -7,10 +7,6 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing:border-box;
 }
 
-:focus{
-    outline:0;
-    box-shadow:0 0 0 2px ${props => props.theme['light-purple']};
-}
 
 body{
     background-color:#000;

@@ -1,8 +1,9 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
+import { Item, Photos } from "./Api";
 
 export interface BookContextProps {
-    galleryData: galleryData[];
-    photosData: photosData[];
+    galleryData: Item[];
+    photosData: Photos[];
     loading: boolean;
     setLoading: Dispatch<SetStateAction<boolean>>;
     searchGallery: (query?: string) => Promise<void>;
