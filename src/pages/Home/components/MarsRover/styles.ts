@@ -46,10 +46,15 @@ export const MarsRoversContent = styled.div`
         max-width:800px;
         span{
             font-size:1.65rem;
+            -webkit-text-stroke-width: 0.5;
+            -webkit-text-stroke-color: black;
         }
 
         strong{
-            color:${props => props.theme['light-purple']}
+            color:${props => props.theme['light-purple']};
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+            filter:none;
         }
 
         p{

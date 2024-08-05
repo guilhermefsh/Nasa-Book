@@ -25,6 +25,14 @@ export const ApodContainer = styled.section`
             }
         }
     }
+
+    @media (max-width:370px) {
+        figure{
+            img{
+                max-width:300px;
+            }
+        }
+    }
 `
 
 export const SearchApod = styled.div`
@@ -65,6 +73,7 @@ export const SearchApod = styled.div`
         h4{
             font-size:1.5rem;
         }
+
     }
 `
 
@@ -91,7 +100,23 @@ export const InfoApodContainer = styled.div`
 
    @media(max-width:600px){
         p{
-            padding:1rem;   
+            padding:1rem;
+            text-align:justify;   
+        }
+    }
+
+    @media(max-width:370px){
+
+        h4{
+            padding:1.6rem;
+        }
+        p{
+            padding:2rem;
+            max-height:300px;
+            overflow-y:scroll;
+                &::-webkit-scrollbar{
+                    display:none;
+                }    
         }
     }
 `

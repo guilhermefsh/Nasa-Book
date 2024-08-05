@@ -116,6 +116,8 @@ export const GalleryInfo = styled.div`
 
     span {
         font-size: 2.5rem;
+        -webkit-text-stroke-width: 1.3px;
+        -webkit-text-stroke-color: black;
     }
 
     strong {

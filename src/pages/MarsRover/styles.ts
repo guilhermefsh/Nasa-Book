@@ -56,6 +56,15 @@ export const MarsRoverInfo = styled.div`
                 width:330px;
             }
         }
+
+        p{
+            text-align:justify;
+        }
+    }
+    @media (max-width:370px) {
+        p{
+            padding:1.2rem;
+        }
     }
 `
 
