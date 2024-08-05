@@ -48,7 +48,7 @@ export const Gallery = () => {
                                 <picture key={nasa_id} onClick={() => handleInfoImage(nasa_id)}>
                                     <Tilt>
                                         <img src={imageUrl} alt={title} />
-                                        <figcaption>{title}</figcaption>
+                                        <figcaption>{title.slice(0, 55)}</figcaption>
                                     </Tilt>
                                 </picture>
                             );

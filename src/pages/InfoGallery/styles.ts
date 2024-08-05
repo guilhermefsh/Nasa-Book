@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SectionContainer = styled.section`
     margin: 5rem 0;
     filter: drop-shadow(4px 4px 5px ${props => props.theme.black});
+    height:70vh;
 `
 
 export const InfoGContainer = styled.div`
