@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom"
+import { RouterProvider } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
 import { defaultTheme } from "./styles/theme/default"
 import { GlobalStyles } from "./styles/globalstyles"
@@ -9,15 +9,13 @@ import { BookProvider } from "./contexts/BookContext"
 
 function App() {
   return (
-    <BrowserRouter basename="/Nasa-Book">
-      <ThemeProvider theme={defaultTheme}>
-        <GlobalStyles />
-        <BookProvider>
-          <ToastContainer />
-          <Router />
-        </BookProvider>
-      </ThemeProvider>
-    </BrowserRouter >
+    <ThemeProvider theme={defaultTheme}>
+      <GlobalStyles />
+      <BookProvider>
+        <ToastContainer />
+        <RouterProvider router={Router} />
+      </BookProvider>
+    </ThemeProvider>
   )
 }
 
